@@ -1,0 +1,8 @@
+{
+  "landingPage": "/wp-admin/admin.php?page=golffun",
+  "steps": [
+    { "step": "activatePlugin", "pluginPath": "GolfFun/golf-fun.php" },
+    { "step": "runPHP", "code": "<?php require '/wordpress/wp-load.php'; $page = get_page_by_path('spela-golf'); $id = $page ? $page->ID : wp_insert_post(array('post_title'=>'GolfFun', 'post_name'=>'spela-golf', 'post_content'=>'[golffun]', 'post_status'=>'publish', 'post_type'=>'page')); update_option('blogname', 'GolfFun'); update_option('show_on_front', 'page'); update_option('page_on_front', $id); update_option('golffun_settings', array('theme'=>'nordic','music'=>0,'weather'=>1));" },
+    { "step": "login" }
+  ]
+}
